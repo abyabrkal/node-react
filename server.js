@@ -4,11 +4,15 @@ import apiRouter from './api'
 import express from 'express';
 const server = express();
 
+server.set('view engine', 'ejs');
+
 // 2. In addition to port listening, 
 //    it also does server-side rotuing 
 server.get('/', (req, res) => {
     //use res.send() for sending simple strings
-    res.send('Hello Express');
+    res.render('index', {
+        content: 'Hello <span>EJS</span>!'
+    });
 });
 
 // Middleware for serving public files
