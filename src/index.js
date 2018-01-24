@@ -1,6 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Note: 
+// React.PropTypes is deprecated as of React v15.5.
+//
+// Please use the prop-types library instead.
+//       npm install --save prop-types
+import PropTypes from 'prop-types'; 
+
+
+
 const Header = ({ message }) => {
     return (
         <h2 className="Header text-center">
@@ -9,10 +18,9 @@ const Header = ({ message }) => {
     );
 };
 
-// Props validation to specify the types 
-// very much required
+
 Header.propTypes = {
-    message: React.PropTypes.string
+    message: PropTypes.string.isRequired
 };
 
 
