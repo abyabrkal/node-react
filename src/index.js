@@ -1,10 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SSL_OP_PKCS1_CHECK_2 } from 'constants';
+
+const App = (props) => {
+    return (
+        <div>
+        <h2 className="text-center">
+            {props.headerMessage}
+        </h2>
+        </div>
+    );
+};
+
+
+// Props validation to specify the types 
+// very much required
+App.propTypes = {
+    headerMessage: React.PropTypes.string.isRequired
+};
+
+App.defaultProps = {
+    headerMessage: 'Hello!!'
+};
 
 ReactDOM.render(    
-    <h2 className="text-center">
-        Hello React from JSX!!
-    </h2>,
+    <App headerMessage="Hello Props"/>,
     document.getElementById('root')
 );
