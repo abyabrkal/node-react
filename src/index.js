@@ -7,11 +7,14 @@ import ReactDOM from 'react-dom';
 //       npm install --save prop-types
 import PropTypes from 'prop-types'; 
 
+import data from './testData';
+console.log(data);
+
+
+
 import App from './components/App';
 
-
-
 ReactDOM.render(    
-    <App />,
+    <App contests={ data.contests}/>,
     document.getElementById('root')
 );
