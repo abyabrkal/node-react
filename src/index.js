@@ -8,8 +8,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'; 
 
 import data from './testData';
-console.log(data);
-
 
 
 import App from './components/App';
