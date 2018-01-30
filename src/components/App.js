@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import ContestPreview from './ContestPreview';
-import data from '../testData';
+
 
 class App extends React.Component {
   state = {
