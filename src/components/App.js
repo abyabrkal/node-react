@@ -1,16 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import PropTypes from 'prop-types'; 
 import ContestPreview from './ContestPreview';
-
-
-/* IMSIDE DEEP DIV
-
-          {this.props.contests.map(contest =>
-            <ContestPreview {...contest} />
-		  )}
-*/
-
 
 class App extends React.Component {
   state = {
@@ -27,7 +17,9 @@ class App extends React.Component {
       <div className="App">
         <Header message={this.state.pageHeader} />
         <div>
-			<ContestPreview {...this.props.contests[0]} />
+          {this.props.contests.map(contest =>
+            <ContestPreview {...contest} />
+          )}
         </div>
       </div>
     );

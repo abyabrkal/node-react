@@ -1,25 +1,27 @@
 import config from './config';
-import apiRouter from './api'
+import apiRouter from './api';
+import sassMiddleware from 'node-sass-middleware';
+import path from 'path';
 
 import express from 'express';
 const server = express();
 
+server.use(sassMiddleware({
+  src: path.join(__dirname, 'sass'),
+  dest: path.join(__dirname, 'public')
+}));
+
 server.set('view engine', 'ejs');
 
-// 2. In addition to port listening, 
-//    it also does server-side rotuing 
 server.get('/', (req, res) => {
-    //use res.send() for sending simple strings
-    res.render('index', {
-        content: 'Hello <span>EJS</span>!'
-    });
+  res.render('index', {
+    content: '...'
+  });
 });
 
-// Middleware for serving public files
 server.use('/api', apiRouter);
 server.use(express.static('public'));
 
-// 1. Express listening to single port for any user requests
-server. listen(config.port, () => {
-    console.info("Express listening on port", config.port);
+server.listen(config.port, () => {
+  console.info('Express listening on port', config.port);
 });
